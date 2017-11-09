@@ -1,13 +1,22 @@
-
+---
+output: github_document
+---
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-wurmc
-=====
+```{r label="setup", include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+# wurmc
 
 R package for scanning, correcting and grading multiple choice exams at Wageningen University and Research.
 
 It can be installed using:
 
-``` r
+```{r, eval=FALSE}
 install.packages("devtools")
 devtools::install_github("mverouden/wurmc")
 ```

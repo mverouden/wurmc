@@ -11,14 +11,15 @@ Authors@R: c(
            email = "Eric.Boer@wur.nl"),
     person("Jos", "Hageman", role = c("ctb"),
            email = "Jos.Hageman@wur.nl"))
-Author: Maikel Verouden [aut, cre, ctb],
-        Eric Boer [ctb],
-        Jos Hageman [ctb]
+Author:
+    Maikel Verouden [aut, cre, ctb],
+    Eric Boer [ctb],
+    Jos Hageman [ctb]
 Maintainer: Maikel Verouden <Maikel.Verouden@wur.nl>
 Encoding: UTF-8
 Depends:
     R (>= 3.3.0)
-Imports: 
+Imports:
     tidyr (>= 0.2.0),
     dplyr (>= 0.4.2),
     XLConnect (>= 0.2.11),
