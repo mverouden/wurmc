@@ -1,0 +1,3 @@
+### To exclude files from being put into the package
+^.*\.Rproj$
+^\.Rproj\.user$

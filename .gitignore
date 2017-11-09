@@ -1,0 +1,18 @@
+### Specific R files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+### Package development
+### Manualpages of the wurmc package
+man/
+### NAMESPACE file of the wurmc package
+NAMESPACE
+
+### LaTeX files
+*.bbl
+*.log
+*.toc
+*.xwm
+*.tex
