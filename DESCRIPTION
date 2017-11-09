@@ -1,12 +1,28 @@
 Package: wurmc
 Type: Package
 Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Version: 0.0.0.9000
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: c(
+    person("Maikel", "Verouden", role = c("aut", "cre", "ctb"),
+           email = "Maikel.Verouden@wur.nl"),
+    person("Eric", "Boer", role = c("ctb"),
+           email = "Eric.Boer@wur.nl"),
+    person("Jos", "Hageman", role = c("ctb"),
+           email = "Jos.Hageman@wur.nl"))
+Author: Maikel Verouden [aut, cre, ctb],
+        Eric Boer [ctb],
+        Jos Hageman [ctb]
+Maintainer: Maikel Verouden <Maikel.Verouden@wur.nl>
 Encoding: UTF-8
-LazyData: true
+Depends:
+    R (>= 3.3.0)
+Imports: 
+    tidyr (>= 0.2.0),
+    dplyr (>= 0.4.2),
+    XLConnect (>= 0.2.11),
+    svDialogs (>= 0.9.57)
+License: GPL-3
+LazyData: TRUE
 RoxygenNote: 6.0.1
