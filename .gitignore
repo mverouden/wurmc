@@ -6,9 +6,9 @@
 
 ### Package development
 ### Manualpages of the wurmc package
-man/
+# man/
 ### NAMESPACE file of the wurmc package
-NAMESPACE
+# NAMESPACE
 
 ### LaTeX files
 *.bbl

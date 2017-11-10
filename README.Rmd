@@ -28,7 +28,6 @@ Next the Microsoft Excel workbook is used as one of the required inputs for grad
 * a file containing the students that registered for the exam,
 * a file containing the practicum information about the students, whether they passed the practicum and whether or not they have earned a bonus to be added to the exam grade.
 
-
 # Installation
 It can be installed using:
 
