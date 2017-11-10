@@ -45,3 +45,9 @@ artifacts:
 
   - path: '\*_*.zip'
     name: Bits
+
+r_github_packages:
+  - r-lib/covr
+
+after_success:
+  - Rscript -e 'covr::coveralls()'
