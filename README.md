@@ -1,5 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+[![Build status](https://ci.appveyor.com/api/projects/status/fsovwvb6lng8rxc6?svg=true)](https://ci.appveyor.com/project/mverouden/wurmc)
+
 The official repository for the wurmc R package
 ===============================================
 
