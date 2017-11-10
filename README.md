@@ -1,6 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Build status](https://ci.appveyor.com/api/projects/status/pksd2fuf6w28cpsu?svg=true)](https://ci.appveyor.com/project/mverouden/wurmc) [![Build Status](https://travis-ci.org/mverouden/wurmc.svg?branch=master)](https://travis-ci.org/mverouden/wurmc)
+[![Build status](https://ci.appveyor.com/api/projects/status/pksd2fuf6w28cpsu?svg=true)](https://ci.appveyor.com/project/mverouden/wurmc) [![Build Status](https://travis-ci.org/mverouden/wurmc.svg?branch=master)](https://travis-ci.org/mverouden/wurmc) [![Coverage Status](https://coveralls.io/repos/github/mverouden/wurmc/badge.svg?branch=master)](https://coveralls.io/github/mverouden/wurmc?branch=master)
 
 The official repository for the wurmc R package
 ===============================================
