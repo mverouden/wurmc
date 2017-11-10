@@ -1,6 +1,5 @@
 ### To exclude files from being put into the package
 ^.*\.Rproj$         # Automatically added by RStudio,
-^*\.Rproj$          # project files,
 ^\.Rproj\.user$     # used for temporary files.
 ^\.gitkeep$         # File to kee empty folders
 ^README\.Rmd$       # An Rmarkdown file used to generate README.md
