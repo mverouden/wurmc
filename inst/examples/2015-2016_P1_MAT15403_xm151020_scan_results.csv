@@ -1,7 +1,7 @@
 File name;[Exam] Version;[IDStudent] IDNo001;[IDStudent] IDNo002;[IDStudent] IDNo003;[IDStudent] IDNo004;[IDStudent] IDNo005;[IDStudent] IDNo006;[IDStudent] IDNo007;[IDStudent] IDNo008;[IDStudent] IDNo009;[IDStudent] IDNo010;[IDStudent] IDNo011;[IDStudent] IDNo012;[Question1to20] Q01;[Question1to20] Q02;[Question1to20] Q03;[Question1to20] Q04;[Question1to20] Q05;[Question1to20] Q06;[Question1to20] Q07;[Question1to20] Q08;[Question1to20] Q09;[Question1to20] Q10;[Question1to20] Q11;[Question1to20] Q12;[Question1to20] Q13;[Question1to20] Q14;[Question1to20] Q15;[Question1to20] Q16;[Question1to20] Q17;[Question1to20] Q18;[Question1to20] Q19;[Question1to20] Q20;[Question21to40] Q21;[Question21to40] Q22;[Question21to40] Q23;[Question21to40] Q24;[Question21to40] Q25;[Question21to40] Q26;[Question21to40] Q27;[Question21to40] Q28;[Question21to40] Q29;[Question21to40] Q30;[Question21to40] Q31;[Question21to40] Q32;[Question21to40] Q33;[Question21to40] Q34;[Question21to40] Q35;[Question21to40] Q36;[Question21to40] Q37;[Question21to40] Q38;[Question21to40] Q39;[Question21to40] Q40
 exam_001;A;9;8;0;4;2;9;0;1;4;1;1;0;B;D;D;D;B;A;D;C;B;D;D;D;D;C;B;B;B;C;B;B;A;A;C;B;A;;;;;;;;;;;;;;;
 exam_002;A;9;7;0;4;2;9;0;2;5;0;2;0;C;C;B;D;B;B;D;D;C;D;D;A;C;A;B;C;A;B;B;B;B;A;C;A;C;;;;;;;;;;;;;;;
-exam_003;A;9;3;0;5;2;7;0;;4;0;7;0;B;D;D;D;A;B;D;A;C;C;D;A;A;C;B;B;B;C;B;B;A;B;A;C;B;;;;;;;;;;;;;;;
+exam_003;A;9;3;0;5;2;7;0;4;4;0;7;0;B;D;D;D;A;B;D;A;C;C;D;A;A;C;B;B;B;C;B;B;A;B;A;C;B;;;;;;;;;;;;;;;
 exam_004;A;9;7;0;5;3;0;0;6;0;1;1;0;C;D;D;C;A;A;D;D;B;B;D;D;C;D;C;A;A;B;B;D;D;D;C;C;B;;;;;;;;;;;;;;;
 exam_005;A;9;7;0;5;0;1;0;8;7;0;1;0;C;C;D;D;D;C;D;A;D;B;D;B;D;C;B;C;A;B;B;D;A;A;C;C;A;;;;;;;;;;;;;;;
 exam_006;A;9;7;0;9;1;9;0;9;3;0;4;0;C;D;D;D;A;A;D;D;B;B;A;B;D;C;B;D;D;D;B;A;A;A;C;B;B;;;;;;;;;;;;;;;
@@ -103,7 +103,7 @@ exam_101;A;9;5;0;1;0;9;8;1;2;0;8;0;C;D;D;C;D;A;D;C;D;D;D;D;D;C;B;C;A;B;B;C;A;B;A
 exam_102;A;9;7;0;2;1;4;8;1;6;0;9;0;C;C;C;D;A;B;D;D;D;D;D;B;C;A;D;A;A;C;B;C;A;A;B;C;C;;;;;;;;;;;;;;;
 exam_103;A;9;3;0;9;0;8;8;1;7;0;2;0;B;D;D;D;A;A;D;C;D;D;D;B;A;C;B;C;B;A;B;A;A;A;D;B;C;;;;;;;;;;;;;;;
 exam_104;A;9;7;0;4;2;4;8;1;8;0;9;0;C;C;D;D;B;B;D;C;D;C;D;B;D;C;B;C;A;C;B;B;A;A;C;C;A;;;;;;;;;;;;;;;
-exam_105;A;9;7;0|8;;0;3;8;1|9;;0;5;0;B;C;D;D;A;A;D;C;D;D;D;B;D;A;B;A;B;C;B;B;B;A;C;B;A;;;;;;;;;;;;;;;
+exam_105;A;9;7;0;8;0;3;8;1;9;0;5;0;B;C;D;D;A;A;D;C;D;D;D;B;D;A;B;A;B;C;B;B;B;A;C;B;A;;;;;;;;;;;;;;;
 exam_106;A;9;7;1;0;0;6;8;2;5;1;0;0;C;D;D;D;B;B;D;A;D;D;D;A;D;C;D;C;A;B;B;B;A;A;A;B;A;;;;;;;;;;;;;;;
 exam_107;A;9;7;0;4;2;0;8;2;9;0;4;0;C;D;D;D;B;A;D;C;D;D;D;A;D;C;D;B;A;B;B;D;A;A;C;B;A;;;;;;;;;;;;;;;
 exam_108;A;9;6;1;2;2;8;8;3;5;0;6;0;C;D;D;C;B;A;A;C;D;B;D;A;D;A;D;C;A;C;A;D;A;A;B;C;A;;;;;;;;;;;;;;;
@@ -148,7 +148,7 @@ exam_146;B;9;5;1;1;0;1;2;5;9;0;3;0;D;C;D;B;B;A;C;C;D;C;A;C;C;A;A;D;A;B;B;C;A;D;D
 exam_147;B;9;7;0;5;2;4;2;6;3;0;2;0;C;C;C;B;B;D;A;A;C;B;A;C;C;C;D;A;A;B;B;A;A;D;D;A;B;;;;;;;;;;;;;;;
 exam_148;B;9;7;0;5;1;1;2;9;0;0;6;0;D;C;C;B;B;B;A;A;A;B;A;C;C;A;D;C;A;D;B;C;A;B;D;D;C;;;;;;;;;;;;;;;
 exam_149;B;9;7;0;7;2;0;2;6;4;0;2;0;D;C;C;B;B;B;A;A;A;B;A;A;D;B;A;D;A;D;C;D;C;D;C;A;C;;;;;;;;;;;;;;;
-exam_150;B;9;6;0|8;8;2;5;2|7;7;6;0;6;0;C;D;C;B;C;D;A;B;B;B;B;A;C;B;C;A;A;D;B;C;D;B;C;C;C;;;;;;;;;;;;;;;
+exam_150;B;9;6;0;8;2;5;2;7;6;0;6;0;C;D;C;B;C;D;A;B;B;B;B;A;C;B;C;A;A;D;B;C;D;B;C;C;C;;;;;;;;;;;;;;;
 exam_151;B;9;6;0;4;1;4;2;7;7;0;3;0;D;C;C;B;C;A;A;B;A;B;A;D;C;A;B;D;A;C;B;D;A;B;D;D;C;;;;;;;;;;;;;;;
 exam_152;B;9;6;1;2;2;7;3;0;7;0;4;0;D;C;B;C;D;C;A;A;D;C;A;A;C;A;D;B;D;D;C;D;D;B;D;C;C;;;;;;;;;;;;;;;
 exam_153;B;9;3;0;7;0;1;3;0;7;1;2;0;B;B;B;B;C;A;A;A;B;B;A;B;C;D;D;A;A;B;C;D;D;B;D;A;D;;;;;;;;;;;;;;;
