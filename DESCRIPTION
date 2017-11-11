@@ -18,7 +18,8 @@ Author:
 Maintainer: Maikel Verouden <Maikel.Verouden@wur.nl>
 Encoding: UTF-8
 Depends:
-    R (>= 3.3.0)
+    R (>= 3.3.0),
+    svDialogs (>= 0.9.57)
 Imports:
     tidyr (>= 0.2.0),
     dplyr (>= 0.4.2),

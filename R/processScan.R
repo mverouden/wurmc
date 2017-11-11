@@ -1,9 +1,16 @@
+#' GUI: Conversion of FromScanner File into Microsoft Excel File.
+#'
+#' Graphical User Interface guided conversion of a FormScanner csv-file into a
+#' Microsoft Excel xlsx-file.
+#'
+#' @return A Microsoft Excel workbook xlsx-file with the name specified in one
+#'   of the GUI questions.
+#'
+#' @seealso \code{\link{formScanner2Excel}}
+#'
 #' @export
 #' @import svDialogs
-#' @import svGUI
 processScan <- function() {
-  ## Get current working directory
-  startDir <- getwd()
   ## GUI: working directory selection
   setwd(svDialogs::dlgDir(default = getwd(), title = "Choose your working directory")$res)
   # GUI: selection of the FormScanner file with student responses
@@ -45,12 +52,6 @@ processScan <- function() {
   ##  the responses to the multiple-choice test items (Q1 to maximally Q40)
   ##  depending on the number of test items in the exam (noItmes).
   formScanner2Excel(fileName, noItems, courseCode, saveName)
-  ## return to start.directory
-  setwd(startDir)
-  # ## Clear the working environment (optional)
-  # if(dlgMessage("Do you want to clear the working environment?", "yesno")$res == "yes") {
-  #   if(okCancelBox("WARNING: ALL OBJECTS WILL BE DELETED FROM YOUR WORKING ENVIRONMENT!!")==TRUE){
-  #     rm(list = ls())
-  #   }
-  # }
+  ## Return nothing
+  return()
 }
