@@ -10,7 +10,7 @@
 #'
 #' @export
 #' @import svDialogs
-processScan <- function() {
+processMC <- function() {
   ## Save starting directory
   startDir <- getwd()
   ## GUI: working directory selection
