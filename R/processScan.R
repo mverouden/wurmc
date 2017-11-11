@@ -11,6 +11,8 @@
 #' @export
 #' @import svDialogs
 processScan <- function() {
+  ## Save starting directory
+  startDir <- getwd()
   ## GUI: working directory selection
   setwd(svDialogs::dlgDir(default = getwd(), title = "Choose your working directory")$res)
   # GUI: selection of the FormScanner file with student responses
@@ -52,6 +54,11 @@ processScan <- function() {
   ##  the responses to the multiple-choice test items (Q1 to maximally Q40)
   ##  depending on the number of test items in the exam (noItmes).
   formScanner2Excel(fileName, noItems, courseCode, saveName)
-  ## Return nothing
-  return(message(paste0("File saved as: ", getwd(), "/", saveName, ".xlsx")))
+  ## Print location and name of saved file
+  message(paste0("File saved as: ",
+                 getwd(),
+                 ifelse(tolower(Sys.info()[['sysname']]) == "windows", "\\", "/"),
+                 saveName,
+                 ".xlsx"))
+  return(setwd(startDir))
 }
