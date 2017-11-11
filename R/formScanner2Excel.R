@@ -26,6 +26,7 @@
 #'   xlsx will be added as file extension.
 #' @return A Microsoft Excel workbook xlsx-file named with the name specified
 #'   by the \code{saveName} function argument.
+#'
 #' @export
 #'
 #' @examples
@@ -90,5 +91,6 @@ formScanner2Excel <- function(fileName,
                             startCol = 1,
                             header = TRUE)
   ## Save the workbook to an Excel file
-  return(XLConnect::saveWorkbook(wb))
+  XLConnect::saveWorkbook(wb)
+  return()
 }
