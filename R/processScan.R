@@ -53,5 +53,5 @@ processScan <- function() {
   ##  depending on the number of test items in the exam (noItmes).
   formScanner2Excel(fileName, noItems, courseCode, saveName)
   ## Return nothing
-  return()
+  return(message(paste0("File saved as: ", getwd(), "/", saveName, ".xlsx")))
 }
