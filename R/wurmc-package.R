@@ -26,5 +26,5 @@
 #'
 #' @docType package
 #' @name wurmc
-#' @importFrom utils read.csv2
+#' @importFrom utils read.csv read.csv2
 NULL

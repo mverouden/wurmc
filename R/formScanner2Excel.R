@@ -41,7 +41,7 @@ formScanner2Excel <- function(fileName,
                               courseCode,
                               saveName = "ICT_results") {
   ## Check whether a *.csv has been provided
-  if (!(tolower(strsplit(fileName, "\\.")[[1]][2]) == "csv")) {
+  if (!(tolower(strsplit(x = fileName, split = "\\.")[[1]][2]) == "csv")) {
     stop("FormScanner responses not read, due to an invalid responses file extension (should be *.csv file)")
   }
   ## Convert noItems into an integer
