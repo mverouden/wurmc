@@ -25,6 +25,7 @@ Installation
 It can be installed using:
 
 ``` r
+install.packages("svDialogs")
 install.packages("devtools")
 devtools::install_github("mverouden/wurmc")
 ```

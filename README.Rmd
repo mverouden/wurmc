@@ -31,6 +31,7 @@ Next the Microsoft Excel workbook is used as one of the required inputs for grad
 It can be installed using:
 
 ```{r label="installation", eval=FALSE}
+install.packages("svDialogs")
 install.packages("devtools")
 devtools::install_github("mverouden/wurmc")
 ```

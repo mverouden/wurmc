@@ -1,4 +1,4 @@
-#' GUI: Conversion of FromScanner File into Microsoft Excel File.
+#' GUI: Conversion of a FromScanner File into Microsoft Excel File.
 #'
 #' Graphical User Interface guided conversion of a FormScanner csv-file into a
 #' Microsoft Excel xlsx-file.

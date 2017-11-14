@@ -1,4 +1,4 @@
-#' Convert FormScanner file to Microsoft Excel file.
+#' Convert a FormScanner file to Microsoft Excel file.
 #'
 #' Convert responses of a multiple choice answer sheet as obtained by Formscanner
 #' ,as a csv-file, into a Microsoft Excel workbook xlsx-file.

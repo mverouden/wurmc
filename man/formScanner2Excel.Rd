@@ -2,7 +2,7 @@
 % Please edit documentation in R/formScanner2Excel.R
 \name{formScanner2Excel}
 \alias{formScanner2Excel}
-\title{Convert FormScanner file to Microsoft Excel file.}
+\title{Convert a FormScanner file to Microsoft Excel file.}
 \usage{
 formScanner2Excel(fileName, noItems, courseCode, saveName = "ICT_results")
 }
