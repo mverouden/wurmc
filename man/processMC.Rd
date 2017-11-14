@@ -2,7 +2,7 @@
 % Please edit documentation in R/processMC.R
 \name{processMC}
 \alias{processMC}
-\title{GUI: Conversion of FromScanner File into Microsoft Excel File.}
+\title{GUI: Conversion of a FromScanner File into Microsoft Excel File.}
 \usage{
 processMC()
 }
