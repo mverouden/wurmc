@@ -1,4 +1,4 @@
-#' Load the answer key file for grading.
+#' Load the Answer Key File for Grading.
 #'
 #' \code{loadKey()} loads a file with the exam answer key for all versions. This
 #' file should be a comma or semicolon separated value file (csv) or a Microsoft
