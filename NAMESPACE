@@ -3,6 +3,7 @@
 export(formScanner2Excel)
 export(loadKey)
 export(loadResponses)
+export(numberCorrect)
 export(processMC)
 import(svDialogs)
 importFrom(utils,read.csv)
