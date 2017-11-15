@@ -8,13 +8,13 @@ numberCorrect(responses, key)
 }
 \arguments{
 \item{responses}{A data.frame object, as created with the
-\code{\link{loadResponses()}} function, with in the first column the
+\code{\link{loadResponses}} function, with in the first column the
 student registration numbers of students taking the exam. The second column
 specifies the exam version the student filled. Subsequent columns give the
 filled in answers to the multiple choice exam test items (questions) as
 filled by the students, with a maximum of 40 test items (questions).}
 
-\item{key}{A data.frame object, as create with the \code{\link{loadKey()}}
+\item{key}{A data.frame object, as create with the \code{\link{loadKey}}
 function, with in the first column the exam version and the following
 columns giving the correct answers to the multiple choice exam test items
 (questions).}

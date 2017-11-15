@@ -27,6 +27,8 @@
 #' @return A Microsoft Excel workbook xlsx-file named with the name specified
 #'   by the \code{saveName} function argument.
 #'
+#' @seealso \code{\link{processMC}}
+#'
 #' @export
 #'
 #' @examples
