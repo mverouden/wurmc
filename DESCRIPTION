@@ -8,13 +8,10 @@ Authors@R: c(
     person("Maikel", "Verouden", role = c("aut", "cre", "ctb"),
            email = "Maikel.Verouden@wur.nl"),
     person("Eric", "Boer", role = c("ctb"),
-           email = "Eric.Boer@wur.nl"),
-    person("Jos", "Hageman", role = c("ctb"),
-           email = "Jos.Hageman@wur.nl"))
+           email = "Eric.Boer@wur.nl"))
 Author:
     Maikel Verouden [aut, cre, ctb],
-    Eric Boer [ctb],
-    Jos Hageman [ctb]
+    Eric Boer [ctb]
 Maintainer: Maikel Verouden <Maikel.Verouden@wur.nl>
 Encoding: UTF-8
 Depends:
