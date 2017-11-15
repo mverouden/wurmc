@@ -2,7 +2,7 @@
 % Please edit documentation in R/loadFunctions.R
 \name{loadKey}
 \alias{loadKey}
-\title{Load the answer key file for grading.}
+\title{Load the Answer Key File for Grading.}
 \usage{
 loadKey(keyFile)
 }
@@ -12,7 +12,8 @@ or (x)lsx file containing the answer key to the exam items (questions).}
 }
 \value{
 A data.frame object with in the first column the exam version and
-   the following columns giving the answers to the exam items (questions).
+   the following columns giving the correct answers to the multiple choice
+   exam test items (questions).
 }
 \description{
 \code{loadKey()} loads a file with the exam answer key for all versions. This

@@ -10,7 +10,8 @@
 #' @param keyFile A character string specifying the location and name of the csv
 #'    or (x)lsx file containing the answer key to the exam items (questions).
 #' @return A data.frame object with in the first column the exam version and
-#'    the following columns giving the answers to the exam items (questions).
+#'    the following columns giving the correct answers to the multiple choice
+#'    exam test items (questions).
 #'
 #' @export
 #'
@@ -79,10 +80,10 @@ loadKey <- function(keyFile) {
 #'    function prior to using the \code{loadResponses} function the \code{noItems}
 #'    function argument repuires no specification and will created automatically.
 #' @return A data.frame object with in the first column the student registration
-#'    numbers of students taking the exam. The second columns specifies the exam
-#'    the student filled. Subsequent columns give the filled in answers to the
-#'    multiple choice exam test items (question)s as filled by the students, with
-#'    a maximum of 40 test items (questions).
+#'    numbers of students taking the exam. The second column specifies the exam
+#'    version the student filled. Subsequent columns give the filled in answers
+#'    to the multiple choice exam test items (questions) as filled by the
+#'    students, with a maximum of 40 test items (questions).
 #'
 #' @export
 #'
