@@ -31,7 +31,7 @@ loadKey <- function(keyFile) {
     L <- readLines(con = keyFile, n = 1L)
     if (grepl(";", L)) {
       key <- read.csv2(file = keyFile)
-    }else {
+    } else {
       key <- read.csv(file = keyFile)
     }
     ## Change all columns of the key data.frame to class character
