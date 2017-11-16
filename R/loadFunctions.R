@@ -71,7 +71,7 @@ loadKey <- function(keyFile) {
 #' row: the student registration number, exam version, and the responses to the
 #' multiple choice exam test items (questions).
 #'
-#' @param responsesFile  A character string specifying the location and name of
+#' @param respFile  A character string specifying the location and name of
 #'    the csv or (x)lsx file containing the student responses to the multiple
 #'    choice exam test items (questions).
 #' @param noItems An integer, not exceeding 40, specifying the number of multiple
@@ -89,24 +89,24 @@ loadKey <- function(keyFile) {
 #'
 #' @examples
 #' \dontrun{
-#' responses <- loadResponses(responsesFile)}
-loadResponses <- function(responsesFile, noItems = ncol(key) - 1) {
+#' responses <- loadResponses(respFile)}
+loadResponses <- function(respFile, noItems = ncol(key) - 1) {
   validExt <- c("csv", "xls", "xlsx")
   ## Check whether a *.csv, *.xls or *.xlsx has been provided
-  if (!(tolower(strsplit(x = responsesFile,
+  if (!(tolower(strsplit(x = respFile,
                          split = "\\.")[[1]][2]) %in% validExt)) {
     stop("Responses not read, due to an invalid responses file extension (should be either *.csv, *.xls or *.xlsx)")
   }
   ## Read the student multiple-choice responses into a data.frame named responses
-  if (tolower(strsplit(x = responsesFile,
+  if (tolower(strsplit(x = respFile,
                        split = "\\.")[[1]][2]) == validExt[1]) { # a csv-file
     ## Read the *.csv responses file into a data.frame named responses
-    L <- readLines(con = responsesFile,
+    L <- readLines(con = respFile,
                    n = 1L)
     if (grepl(";", L)) {
-      responses <- read.csv2(file = responsesFile)
+      responses <- read.csv2(file = respFile)
     } else {
-      responses <- read.csv(file = responsesFile)
+      responses <- read.csv(file = respFile)
     }
     ## Order by responses$File.name
     responses <- responses[order(responses$File.name), ]
@@ -132,10 +132,10 @@ loadResponses <- function(responsesFile, noItems = ncol(key) - 1) {
     ## Fill empty fields with "BLANK"
     responses[!is.na(responses) & responses == ""] <- "BLANK"
   } else {
-    if (tolower(strsplit(x = responsesFile,
+    if (tolower(strsplit(x = respFile,
                          split = "\\.")[[1]][2]) %in% validExt[2:3]) { # a xls(x)-file
     ## Read the *.xls(x) workbook file into a structure named wb
-    wb <- XLConnect::loadWorkbook(filename = responsesFile,
+    wb <- XLConnect::loadWorkbook(filename = respFile,
                                   create = FALSE)
     ## Obtain the sheet names in the *.xls(x) workbook as represented by wb
     sheets <- XLConnect::getSheets(object = wb)

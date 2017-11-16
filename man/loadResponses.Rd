@@ -4,10 +4,10 @@
 \alias{loadResponses}
 \title{Load Student Responses to Exam Test Items (Questions).}
 \usage{
-loadResponses(responsesFile, noItems = ncol(key) - 1)
+loadResponses(respFile, noItems = ncol(key) - 1)
 }
 \arguments{
-\item{responsesFile}{A character string specifying the location and name of
+\item{respFile}{A character string specifying the location and name of
 the csv or (x)lsx file containing the student responses to the multiple
 choice exam test items (questions).}
 
@@ -35,5 +35,5 @@ multiple choice exam test items (questions).
 }
 \examples{
 \dontrun{
-responses <- loadResponses(responsesFile)}
+responses <- loadResponses(respFile)}
 }
