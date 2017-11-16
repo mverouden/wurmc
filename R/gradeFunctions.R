@@ -46,6 +46,13 @@ numberCorrect <- function(responses, key) {
 # ber was incorrectly filled on the exam bubble form this function provides the
 # opportunity to manually correct this. From the exam registration list the
 # student's name and study are matched with the student registration number.
+#' Link Names of Students and their Study to Registration Numbers
+#'
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' responses <- linkNames(regFile, responses)}
 linkNames <- function(regFile, responses) {
   validExt <- c("csv", "xls", "xlsx")
   ## Check whether a *.csv, *.xls or *.xlsx has been provided
@@ -70,7 +77,7 @@ linkNames <- function(regFile, responses) {
                                     create = FALSE)
       ## Obtain the sheet names in the *.xls(x) workbook as represented by wb
       sheets <- XLConnect::getSheets(object = wb)
-      ## Read the first sheet of wb into a data.frame named registered
+      ## Read the first sheet of wb into data.frame registered
       registered <- XLConnect::readWorksheet(object = wb,
                                              sheet = sheets[1],
                                              startRow = 0,
@@ -105,44 +112,57 @@ linkNames <- function(regFile, responses) {
     ## student registration number in the list of students registered for
     ## the exam. Store the position in registered students list as selected.
     selected <- which(registered$Reg.number == responses$Reg.number[i])
-    # ----
-    # CONTINUE HERE
-    # ----
     if (length(selected) == 0) { # no match found
-      # Display the student registration number for which no match in the
-      # registered students list was found as well as the name of the
-      # previous student that has been matched. Correct the mistakes in
-      # the displayed student registration number manually.
-      switch(tolower(Sys.info()[['sysname']]),
-             windows = {corrected.reg.number[i] <- dlgInput(paste("Registration number (previous student: ", name[i-1], ")"), default = responses$Reg.number[i])$res},
-             linux   = {corrected.reg.number[i] <- dlgInput(paste("Registration number (previous student: ", name[i-1], ")"), default = responses$Reg.number[i])$res},
-             darwin  = {corrected.reg.number[i] <- strsplit(dlgInput(paste("Registration number (previous student: ", name[i-1], ")"), default = responses$Reg.number[i])$res, "button returned:OK, text returned:")[[1]][2]})
-      # Match the corrected student registration number with a student
-      # registration number in the list of students registered for the
-      # exam.
+      ## Display the student registration number for which no match in the
+      ## registered students list was found as well as the name of the
+      ## previous student that has been matched. Correct the mistakes in
+      ## the displayed student registration number manually.
+      switch(tolower(Sys.info()[["sysname"]]),
+             windows = {corrected.reg.number[i] <- svDialogs::dlgInput(message = paste("Registration number (previous student: ",
+                                                                                       name[i - 1],
+                                                                                       ")"),
+                                                                       default = responses$Reg.number[i])$res},
+             linux   = {corrected.reg.number[i] <- svDialogs::dlgInput(message = paste("Registration number (previous student: ",
+                                                                                       name[i - 1],
+                                                                                       ")"),
+                                                                       default = responses$Reg.number[i])$res},
+             darwin  = {corrected.reg.number[i] <- strsplit(x = svDialogs::dlgInput(message = paste("Registration number (previous student: ",
+                                                                                                    name[i - 1],
+                                                                                                    ")"),
+                                                                                    default = responses$Reg.number[i])$res,
+                                                            split = "button returned:OK, text returned:")[[1]][2]})
+      ## Match the corrected student registration number with a student
+      ## registration number in the list of students registered for the
+      ## exam.
       selected <- which(registered$Reg.number == corrected.reg.number[i])
-      if(length(selected) == 0) {
-        # No match found, either there was a mistake in the corrected
-        # student registration number or the student was not registered
-        # for the exam.
+      if (length(selected) == 0) {
+        ## No match found, either there was a mistake in the corrected student
+        ## registration number or the student was not registered for the exam.
         name[i] <- "unknown"
         study[i] <- "unknown"
-      }else if(length(selected) == 1){
-        # After correcting the student registration number a match with
-        # a student registered for the exam was found.
-        name[i] <- registered$Name[selected]
-        study[i] <- registered$Study[selected]
+      } else {
+        if (length(selected) == 1) {
+          ## After correcting the student registration number a match with
+          ## a student registered for the exam was found.
+          name[i] <- registered$Name[selected]
+          study[i] <- registered$Study[selected]
+        }
       }
-    }else if(length(selected) == 1) {
-      # A match of the scanned student registration number with a student
-      # registered for the exam was found.
+    } else {
+      if (length(selected) == 1) {
+      ## A match of the scanned student registration number with a student
+      ## registered for the exam was found.
       corrected.reg.number[i] <- registered$Reg.number[selected] # == responses$Reg.number[i]
       name[i] <- registered$Name[selected]
       study[i] <- registered$Study[selected]
+      }
     }
   }
-  # Add the corrected registration number, name and study to the responses
-  # data.frame as columns named Corrected.reg.number, Name and Study
-  responses <- mutate(responses, Corrected.reg.number = corrected.reg.number, Name = name, Study = study)
+  ## Add the corrected registration number, name and study to the responses
+  ## data.frame as columns named Corrected.reg.number, Name and Study
+  responses <- dplyr::mutate(responses, Corrected.reg.number = corrected.reg.number, Name = name, Study = study)
   return(responses)
-} # done and checked
+}
+# ----
+# CONTINUE HERE
+# ----
