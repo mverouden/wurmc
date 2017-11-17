@@ -6,8 +6,33 @@
 \usage{
 linkNames(regFile, responses)
 }
+\arguments{
+\item{regFile}{A character string specifying the location and name of
+the csv or (x)lsx file containing the student's registration number, name
+and study for all students, which registered for the exam via the Student
+Service Centre (SSC).}
+
+\item{responses}{A data.frame object, as created with the
+\code{\link{loadResponses}} function, with in the first column the
+student registration numbers of students taking the exam. The second column
+specifies the exam version the student filled. Subsequent columns give the
+filled in answers to the multiple choice exam test items (questions) as
+filled by the students, with a maximum of 40 test items (questions).}
+}
+\value{
+The \code{responses} data.frame object extended with three columns
+   indicating the corrected registration number (Corrected.reg.number),
+   Name, and Study of all students.
+}
 \description{
-Link Names of Students and their Study to Registration Numbers
+\code{linkNames()} compares the student registration numbers scanned from
+the multiple choice answer sheets (filled by students during the exam) with
+the student registration numbers from the list of students that registered
+for the exam via the Student Service Centre (SSC). In case the registration
+number was incorrectly filled on the answer sheet this function provides the
+opportunity to manually correct this. From the exam registration list the
+student's name and study are matched with the student registration number and
+added to the responses object.
 }
 \examples{
 \dontrun{
