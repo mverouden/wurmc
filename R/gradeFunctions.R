@@ -28,7 +28,7 @@
 numberCorrect <- function(responses, key) {
   ## Check whether numberCorrect was already used
   if ("No.correct" %in% colnames(responses)) {
-    stop("numberCorrect function terminated, because the function was used before and, therefore, a column 'No.correct' already exists.")
+    stop("Function terminated, because the function was used before and, therefore, a column 'No.correct' already exists in the responses object.")
   }
   ## define constants and variables
   noItems <- ncol(key) - 1
@@ -58,6 +58,10 @@ numberCorrect <- function(responses, key) {
 #' \dontrun{
 #' responses <- linkNames(regFile, responses)}
 linkNames <- function(regFile, responses) {
+  ## Check whether linkNames was already used
+  if (all(c("Corrected.reg.number", "Name", "Study") %in% colnames(responses))) {
+    stop("Function terminated, because the function was used before and, therefore, the columns 'Corrected.reg.number', 'Name', and 'Study' already exist in the responses object.")
+  }
   validExt <- c("csv", "xls", "xlsx")
   ## Check whether a *.csv, *.xls or *.xlsx has been provided
   if (!(tolower(strsplit(x = regFile,
