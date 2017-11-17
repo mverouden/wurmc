@@ -163,6 +163,3 @@ linkNames <- function(regFile, responses) {
   responses <- dplyr::mutate(responses, Corrected.reg.number = corrected.reg.number, Name = name, Study = study)
   return(responses)
 }
-# ----
-# CONTINUE HERE
-# ----
