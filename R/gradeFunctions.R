@@ -26,6 +26,10 @@
 #' \dontrun{
 #' responses <- numberCorrect(responses, key)}
 numberCorrect <- function(responses, key) {
+  ## Check whether numberCorrect was already used
+  if ("No.correct" %in% colnames(responses)) {
+    stop("numberCorrect function terminated, because the function was used before and, therefore, a column 'No.correct' already exists.")
+  }
   ## define constants and variables
   noItems <- ncol(key) - 1
   noCorrect <- c(0)
