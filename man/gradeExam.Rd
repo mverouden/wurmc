@@ -35,3 +35,7 @@ corrected for guessing.
 \dontrun{
 responses <- gradeExam(responses, noItems, noOptions)}
 }
+\seealso{
+\code{\link{loadResponses}}, \code{\link{loadKey}},
+   \code{\link{numberCorrect}}, \code{\link{linkNames}}
+}

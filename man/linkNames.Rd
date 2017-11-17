@@ -35,3 +35,6 @@ added to the responses object.
 \dontrun{
 responses <- linkNames(regFile, responses)}
 }
+\seealso{
+\code{\link{loadResponses}}, \code{\link{numberCorrect}}
+}

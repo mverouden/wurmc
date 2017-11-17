@@ -20,6 +20,8 @@
 #'    indicating the number of multiple choice exam test items (questions)
 #'    answered correctly by a student.
 #'
+#' @seealso \code{\link{loadResponses}}, \code{\link{loadKey}}
+#'
 #' @export
 #'
 #' @examples
@@ -64,6 +66,8 @@ numberCorrect <- function(responses, key) {
 #' @return The input \code{responses} data.frame object extended with three columns
 #'    indicating the corrected registration number (Corrected reg. number),
 #'    Name, and Study of all students.
+#'
+#' @seealso \code{\link{loadResponses}}, \code{\link{numberCorrect}}
 #'
 #' @export
 #'
@@ -209,6 +213,9 @@ linkNames <- function(regFile, responses) {
 #' @return The \code{responses} data.frame object extended with a column giving
 #'    the calculated exam grade (Exam grade) for each student.
 #'
+#' @seealso \code{\link{loadResponses}}, \code{\link{loadKey}},
+#'    \code{\link{numberCorrect}}, \code{\link{linkNames}}
+#'
 #' @export
 #'
 #' @examples
@@ -231,7 +238,7 @@ gradeExam <- function(responses, noItems = length(grep("^I", colnames(responses)
   noCorrect <- responses$"No. correct"
   ## Check whether the number.correct function has been applied prior to
   ## calculating the exam grade i.e. that noCorrect is not NULL
-  if(is.null(noCorrect)) {
+  if (is.null(noCorrect)) {
     stop("The number of correct responses needs to be determined prior to grading the exam. Please apply the numberCorrect function first.")
   }
   ## Calculate the exam grade with correction for guessing

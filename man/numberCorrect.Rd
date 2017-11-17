@@ -35,3 +35,6 @@ column of the data.frame \code{responses}.
 \dontrun{
 responses <- numberCorrect(responses, key)}
 }
+\seealso{
+\code{\link{loadResponses}}, \code{\link{loadKey}}
+}
