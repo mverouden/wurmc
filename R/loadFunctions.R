@@ -149,6 +149,6 @@ loadResponses <- function(respFile, noItems = ncol(key) - 1) {
     }
   }
   ## Change column names
-  colnames(responses) <- c("Reg.number", "Version", paste0("I", seq_len(noItems)))
+  colnames(responses) <- c("Reg. number", "Version", paste0("I", seq_len(noItems)))
   return(responses)
 }

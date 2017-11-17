@@ -2,7 +2,7 @@
 % Please edit documentation in R/gradeFunctions.R
 \name{linkNames}
 \alias{linkNames}
-\title{Link Names of Students and their Study to Registration Numbers}
+\title{Link Names of Students and their Study to Registration Numbers.}
 \usage{
 linkNames(regFile, responses)
 }
@@ -13,15 +13,12 @@ and study for all students, which registered for the exam via the Student
 Service Centre (SSC).}
 
 \item{responses}{A data.frame object, as created with the
-\code{\link{loadResponses}} function, with in the first column the
-student registration numbers of students taking the exam. The second column
-specifies the exam version the student filled. Subsequent columns give the
-filled in answers to the multiple choice exam test items (questions) as
-filled by the students, with a maximum of 40 test items (questions).}
+\code{\link{loadResponses}} function and modified by the
+\code{\link{numberCorrect}} function.}
 }
 \value{
-The \code{responses} data.frame object extended with three columns
-   indicating the corrected registration number (Corrected.reg.number),
+The input \code{responses} data.frame object extended with three columns
+   indicating the corrected registration number (Corrected reg. number),
    Name, and Study of all students.
 }
 \description{

@@ -20,7 +20,7 @@ columns giving the correct answers to the multiple choice exam test items
 (questions).}
 }
 \value{
-The \code{responses} data.frame object extended with one column
+The input \code{responses} data.frame object extended with one column
    indicating the number of multiple choice exam test items (questions)
    answered correctly by a student.
 }
