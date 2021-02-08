@@ -4,8 +4,11 @@
 \alias{gradeExam}
 \title{Grade the Multiple Choice Exams with Correction for Guessing}
 \usage{
-gradeExam(responses, noItems = length(grep("^I", colnames(responses))),
-  noOptions = 4)
+gradeExam(
+  responses,
+  noItems = length(grep("^I", colnames(responses))),
+  noOptions = 4
+)
 }
 \arguments{
 \item{responses}{A data.frame object, as created with the

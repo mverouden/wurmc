@@ -3,7 +3,6 @@
 \docType{package}
 \name{wurmc}
 \alias{wurmc}
-\alias{wurmc-package}
 \title{wurmc}
 \description{
 Package for processing and grading multiple choice exams at Wageningen

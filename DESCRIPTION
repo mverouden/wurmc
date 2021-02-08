@@ -23,4 +23,4 @@ Imports:
     XLConnect (>= 0.2.11)
 License: file LICENSE
 LazyData: TRUE
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.1
