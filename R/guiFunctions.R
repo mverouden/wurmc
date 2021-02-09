@@ -21,7 +21,7 @@ processMC <- function() {
   switch(tolower(Sys.info()[["sysname"]]),
          windows = {noItems <- as.integer(svDialogs::dlgInput(message = "Enter the number of exam questions (max. 40 questions)",
                                                               default = c(25))$res)},
-         linux   = {noItems <- as.integer(svDialogs::dlgInput(message  = "Enter the number of exam questions (ma. 40 questions)",
+         linux   = {noItems <- as.integer(svDialogs::dlgInput(message  = "Enter the number of exam questions (max. 40 questions)",
                                                               default = c(25))$res)},
          darwin  = {noItems <- as.integer(strsplit(x = svDialogs::dlgInput(message = "Enter the number of exam questions (max. 40 questions)",
                                                                            default = c(25))$res,
