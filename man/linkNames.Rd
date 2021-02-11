@@ -18,8 +18,8 @@ Service Centre (SSC).}
 }
 \value{
 The input \code{responses} data.frame object extended with three columns
-   indicating the corrected registration number (Corrected reg. number),
-   Name, and Study of all students.
+indicating the corrected registration number (Corrected reg. number),
+Name, and Study of all students.
 }
 \description{
 \code{linkNames()} compares the student registration numbers scanned from

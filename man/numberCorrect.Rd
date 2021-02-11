@@ -21,8 +21,8 @@ columns giving the correct answers to the multiple choice exam test items
 }
 \value{
 The input \code{responses} data.frame object extended with one column
-   indicating the number of multiple choice exam test items (questions)
-   answered correctly by a student.
+indicating the number of multiple choice exam test items (questions)
+answered correctly by a student.
 }
 \description{
 \code{numberCorrect()} checks the student's responses to the multiple choice

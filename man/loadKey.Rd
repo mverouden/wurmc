@@ -2,28 +2,61 @@
 % Please edit documentation in R/loadFunctions.R
 \name{loadKey}
 \alias{loadKey}
-\title{Load the Answer Key File for Grading.}
+\title{Load Answer Key File}
 \usage{
 loadKey(keyFile)
 }
 \arguments{
-\item{keyFile}{A character string specifying the location and name of the csv
-or (x)lsx file containing the answer key to the exam items (questions).}
+\item{keyFile}{A character string (\strong{REQUIRED}) specifying the location and
+name of the \code{.csv} or \code{.xls(x)} file containing the answer key to the exam
+items (questions).}
 }
 \value{
-A data.frame object with in the first column the exam version and
-   the following columns giving the correct answers to the multiple choice
-   exam test items (questions).
+A data.frame object with in the first column the version and the subsequent
+columns giving the correct answers to the multiple choice exam test items
+(questions). The dimensions of the data.frame are used in the grading process.
 }
 \description{
-\code{loadKey()} loads a file with the exam answer key for all versions. This
-file should be a comma or semicolon separated value file (csv) or a Microsoft
-Excel file (xls or xlsx) with on its rows the exam versions (e.g. "A", "B",
-"C", "D") and on its columns the correct responses to the multiple choice
-test items (questions). The first column specifies the exam version (e.g.
-"A", "B", "C", "D").
+Load a file with the multiple choice exam answer key needed for grading.
+}
+\details{
+The \code{loadKey} function loads a file with the exam answer key for all versions
+needed to grade the multiple choice answer forms handed in by students. This
+file should be a comma or semicolon separated value file, having the extension
+\code{.csv}, or a Microsoft Excel file, having the extension \code{.xls(x)}, with on its
+rows the exam versions (e.g. "A", "B", "C", "D") and on its columns the
+correct responses to the multiple choice test items (questions).
+
+The \code{examples} directory of this package contains a Microsoft Excel Template
+named \strong{\code{key_template.xltx}} to aid the creation of the answer key file.
+
+\strong{NOTE: The answer key file should be cropped to the number of required}
+\strong{versions as well as to the required number of test items (questions).}
+
+The first rows of the file specifies the column names:
+\itemize{
+\item Column 1 should be named \strong{Version}
+\item Subsequent columns denotes the multiple choice items example given
+\strong{Q01}, \strong{Q002}, \emph{etc.}
+}
+
+Rows following the first provide the answer key for each multiple choice
+exam required and starts with the version (e.g. "A", "B", "C", "D", \emph{etc.}).
 }
 \examples{
-\dontrun{
-key <- loadKey(keyFile)}
+## Load the answer key from a Microsoft Excel file created with the Microsoft
+## Excel Template key_template contained in the examples folder of this package
+key <- loadKey(keyFile = paste0(.libPaths()[1], "/wurmc/examples/test_key.xlsx"))
+
+## Load the answer key from a comma separated value file
+key <- loadKey(keyFile = paste0(.libPaths()[1], "/wurmc/examples/test_key.csv"))
+
 }
+\seealso{
+Other load functions: 
+\code{\link{loadResponses}()}
+}
+\author{
+Maikel Verouden
+}
+\concept{load functions}

@@ -2,25 +2,32 @@ Package: wurmc
 Type: Package
 Title: WUR Process and Grade Multiple Choice Answer Sheets
 Version: 0.0.0.9033
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
 Authors@R: c(
     person("Maikel", "Verouden", role = c("aut", "cre", "ctb"),
-           email = "Maikel.Verouden@wur.nl"),
+           email = "Maikel.Verouden@wur.nl",
+           comment = c(ORCID = "0000-0002-4893-3323")),
     person("Eric", "Boer", role = c("ctb"),
            email = "Eric.Boer@wur.nl"))
-Author:
-    Maikel Verouden [aut, cre, ctb],
-    Eric Boer [ctb]
 Maintainer: Maikel Verouden <Maikel.Verouden@wur.nl>
-Encoding: UTF-8
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
 Depends:
     R (>= 3.3.0),
     svDialogs (>= 0.9.57)
+BugReports: https://github.com/mverouden/wurmc/issues
+URL: https://github.com/mverouden/wurmc
+License: file LICENSE
+LazyData: TRUE
+Encoding: UTF-8
+RoxygenNote: 7.1.1
+Roxygen: list(markdown = TRUE)
+RdMacros: mathjaxr
 Imports:
     tidyr (>= 0.2.0),
     dplyr (>= 0.4.2),
-    XLConnect (>= 0.2.11)
-License: file LICENSE
-LazyData: TRUE
-RoxygenNote: 7.1.1
+    XLConnect (>= 0.2.11),
+    mathjaxr
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

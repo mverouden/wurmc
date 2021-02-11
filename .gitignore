@@ -16,3 +16,6 @@
 *.toc
 *.xwm
 *.tex
+inst/doc
+doc
+Meta

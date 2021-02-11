@@ -27,7 +27,7 @@ multiple choice exam test item (question). The default is 4 options ("A",
 }
 \value{
 The \code{responses} data.frame object extended with a column giving
-   the calculated exam grade (Exam grade) for each student.
+the calculated exam grade (Exam grade) for each student.
 }
 \description{
 \code{gradeExam()} calculates the exam grades achieved based on the responses
@@ -40,5 +40,5 @@ responses <- gradeExam(responses, noItems, noOptions)}
 }
 \seealso{
 \code{\link{loadResponses}}, \code{\link{loadKey}},
-   \code{\link{numberCorrect}}, \code{\link{linkNames}}
+\code{\link{numberCorrect}}, \code{\link{linkNames}}
 }

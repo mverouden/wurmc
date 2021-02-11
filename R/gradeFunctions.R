@@ -1,3 +1,4 @@
+#' @title
 #' Determine the Number of Correct Student Responses
 #'
 #' \code{numberCorrect()} checks the student's responses to the multiple choice

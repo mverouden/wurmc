@@ -1,0 +1,40 @@
+---
+title: "Introduction to the wurmc package"
+author: "Maikel Verouden"
+date: "`r Sys.Date()`"
+output:
+  rmarkdown::html_vignette:
+  toc: true
+  number_sections: true
+bibliography: bibliography.bib
+vignette: >
+  %\VignetteIndexEntry{Introduction to the wurmc package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.dim = c(7, 4)
+)
+library(wurmc)
+options(width = 100, digits = 2)
+```
+
+The statgenGWAS package has been designed for performing single trait Genome Wide Association Studies (GWAS).
+
+----
+
+# The class `gData`
+
+The **computation** of the Nth Fibonacci number in this function uses the formula obtained from solving the recurrence relation
+$$F_{n} = F_{n-1} + F_{n-2},$$
+which translates to the equation, $x^{n} = x^{n-1} + x^{n-2}$, and then to $x^2 = x + 1$. The two solutions to the latter equation  are $\phi$ and $\psi$, where
+$$\phi=\frac{1+\sqrt{5}}{2}, \qquad \psi=\frac{1-\sqrt{5}}{2}.$$
+
+This eventually leads to the formula used in this function,
+$$F_{n} =\frac{\phi^{n} - \psi^{n}}{\sqrt{5}}.$$
+
+$$\sigma = \sqrt{\frac{Z}{n} \sum \textstyle \frac{1}{2} \displaystyle \left[ \left( \log \frac{H_i}{L_i}\right)^2 - \left(2 \log 2 - 1 \right) \left( \log \frac{C_i}{O_i}\right)^2 \right]}$$

@@ -8,7 +8,7 @@ processMC()
 }
 \value{
 A Microsoft Excel workbook xlsx-file with the name specified in one
-  of the GUI questions.
+of the GUI questions.
 }
 \description{
 Graphical User Interface guided conversion of a FormScanner csv-file into a

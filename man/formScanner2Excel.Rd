@@ -23,7 +23,7 @@ xlsx will be added as file extension.}
 }
 \value{
 A Microsoft Excel workbook xlsx-file named with the name specified
-  by the \code{saveName} function argument.
+by the \code{saveName} function argument.
 }
 \description{
 Convert responses of a multiple choice answer sheet as obtained by Formscanner
