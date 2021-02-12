@@ -2,39 +2,60 @@
 % Please edit documentation in R/gradeFunctions.R
 \name{linkNames}
 \alias{linkNames}
-\title{Link Names of Students and their Study to Registration Numbers.}
+\title{Link Student Names}
 \usage{
 linkNames(regFile, responses)
 }
 \arguments{
-\item{regFile}{A character string specifying the location and name of
-the csv or (x)lsx file containing the student's registration number, name
-and study for all students, which registered for the exam via the Student
-Service Centre (SSC).}
+\item{regFile}{A character string (\strong{REQUIRED}) specifying the location and
+name of the \verb{*.csv} or \code{.xls(x)} file containing the studentnumber, full
+name and study programme for all students, which registered for the exam
+via Osiris.}
 
-\item{responses}{A data.frame object, as created with the
-\code{\link{loadResponses}} function and modified by the
-\code{\link{numberCorrect}} function.}
+\item{responses}{A data.frame object (\strong{REQUIRED}), as created with the
+\code{\link{loadResponses}()} function and modified by the
+\code{\link{numberCorrect}()} function.}
 }
 \value{
 The input \code{responses} data.frame object extended with three columns
-indicating the corrected registration number (Corrected reg. number),
-Name, and Study of all students.
+indicating the corrected studentnumber (\verb{Corrected Studentnumber}),
+name (\verb{Full Name}), and Study (\code{Programme}) of all students.
 }
 \description{
-\code{linkNames()} compares the student registration numbers scanned from
-the multiple choice answer sheets (filled by students during the exam) with
-the student registration numbers from the list of students that registered
-for the exam via the Student Service Centre (SSC). In case the registration
-number was incorrectly filled on the answer sheet this function provides the
-opportunity to manually correct this. From the exam registration list the
-student's name and study are matched with the student registration number and
-added to the responses object.
+Link names of students and their study programme to the corrected studentnumbers.
+}
+\details{
+The \code{linkNames()} function compares the student registration numbers
+scanned from the multiple choice answer sheets (filled by students during the
+exam) with the student registration numbers from the list of students that registered
+for the exam via Osiris. In case the registration number was incorrectly
+filled on the answer sheet this function provides the opportunity to manually
+correct this. From the Test participants per student group file exported from
+Osiris the student's name and study programme are matched with the student
+registration number and added to the responses object.
 }
 \examples{
-\dontrun{
-responses <- linkNames(regFile, responses)}
+## Load the answer key
+key <- loadKey(keyFile = paste0(.libPaths()[1], "/wurmc/examples/keyFile.xlsx"))
+
+## Load the student responses from a Microsoft Excel
+responses <- loadResponses(respFile = paste0(.libPaths()[1], "/wurmc/examples/respFile.xlsx"))
+
+## Determine the number of correct student responses
+responses <- numberCorrect(responses, key)
+
+## Link Student Names
+responses <- linkNames(regFile = paste0(.libPaths()[1], "/wurmc/examples/regFile.xlsx"), responses)
+
 }
 \seealso{
-\code{\link{loadResponses}}, \code{\link{numberCorrect}}
+\code{\link{loadKey}()}, \code{\link{loadResponses}()}
+
+Other grade functions: 
+\code{\link{gradeExam}()},
+\code{\link{numberCorrect}()}
 }
+\author{
+Maikel Verouden
+}
+\concept{grade functions}

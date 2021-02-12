@@ -47,14 +47,14 @@ following particular order:
 }
 }
 \examples{
-## Load the answer key
+## Load Answer Key File
 key <- loadKey(keyFile = paste0(.libPaths()[1], "/wurmc/examples/keyFile.xlsx"))
 
 ## Load the student responses from a Microsoft Excel file
 responses <- loadResponses(respFile = paste0(.libPaths()[1], "/wurmc/examples/respFile.xlsx"))
 
 ## Load the student responses from a comma separated value file as created by
-## Formscanner
+## FormScanner
 responses <- loadResponses(respFile = paste0(.libPaths()[1], "/wurmc/examples/respFile.csv"))
 
 }

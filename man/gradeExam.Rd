@@ -2,7 +2,7 @@
 % Please edit documentation in R/gradeFunctions.R
 \name{gradeExam}
 \alias{gradeExam}
-\title{Grade the Multiple Choice Exams with Correction for Guessing}
+\title{Grade Multiple Choice Exams}
 \usage{
 gradeExam(
   responses,
@@ -11,34 +11,58 @@ gradeExam(
 )
 }
 \arguments{
-\item{responses}{A data.frame object, as created with the
-\code{\link{loadResponses}} function modified by the
+\item{responses}{A data.frame object (\strong{REQUIRED}), as created with the
+\code{\link{loadResponses}()} function modified by the
 \code{\link{numberCorrect}} and \code{\link{linkNames}} functions.}
 
-\item{noItems}{An integer, not exceeding 40, specifying the number of multiple
-choice exam test items (questions) on the answers sheet to be considered.
-If a \code{key} object has been created with the \code{\link{loadKey}}
-function prior to using the \code{loadResponses} function the \code{noItems}
-function argument repuires no specification and will created automatically.}
+\item{noItems}{An integer (\strong{OPTIONAL}), not exceeding 40, specifying the
+number of multiple choice exam test items (questions) on the answers sheet
+to be considered. If a \code{key} object has been created with the
+\code{\link{loadKey}()} function prior to using the
+\code{\link{loadResponses}()} function the \code{noItems} function argument
+requires no specification and will filled automatically.}
 
-\item{noOptions}{An integer, which specifies the number of options for each
-multiple choice exam test item (question). The default is 4 options ("A",
-"B", "C", and "D").}
+\item{noOptions}{An integer (\strong{OPTIONAL}), which specifies the number of
+options for each multiple choice exam test item (question). The default is
+4 options (answers "A", "B", "C", and "D").}
 }
 \value{
-The \code{responses} data.frame object extended with a column giving
-the calculated exam grade (Exam grade) for each student.
+The \code{responses} data.frame object extended with a column giving the
+calculated exam grade (\verb{Exam grade}) for each student.
 }
 \description{
-\code{gradeExam()} calculates the exam grades achieved based on the responses
-to the multiple choice exam test items (questions). The exam grade is
-corrected for guessing.
+Grade Multiple Choice Exams with Correction for Guessing
+}
+\details{
+The \code{gradeExam()} function calculates the exam grades achieved based on
+the correct responses to the multiple choice exam test items (questions). The
+exam grade is corrected for guessing.
 }
 \examples{
-\dontrun{
-responses <- gradeExam(responses, noItems, noOptions)}
+## Load the answer key
+key <- loadKey(keyFile = paste0(.libPaths()[1], "/wurmc/examples/keyFile.xlsx"))
+
+## Load the student responses from a Microsoft Excel
+responses <- loadResponses(respFile = paste0(.libPaths()[1], "/wurmc/examples/respFile.xlsx"))
+
+## Determine the number of correct student responses
+responses <- numberCorrect(responses, key)
+
+## Link Student Names
+responses <- linkNames(regFile = paste0(.libPaths()[1], "/wurmc/examples/regFile.xlsx"), responses)
+
+## Grade Multiple Choice Exams
+responses <- gradeExam(responses)
+
 }
 \seealso{
-\code{\link{loadResponses}}, \code{\link{loadKey}},
-\code{\link{numberCorrect}}, \code{\link{linkNames}}
+\code{\link{loadResponses}()}, \code{\link{loadKey}()}
+
+Other grade functions: 
+\code{\link{linkNames}()},
+\code{\link{numberCorrect}()}
 }
+\author{
+Maikel Verouden
+}
+\concept{grade functions}

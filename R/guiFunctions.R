@@ -9,7 +9,6 @@
 #' @seealso \code{\link{formScanner2Excel}}
 #'
 #' @export
-#' @import svDialogs
 processMC <- function() {
   ## Save starting directory
   startDir <- getwd()

@@ -9,7 +9,7 @@
 #'    items (questions).
 #'
 #' @details
-#' The `loadKey` function loads a file with the exam answer key for all versions
+#' The `loadKey()` function loads a file with the exam answer key for all versions
 #' needed to grade the multiple choice answer forms handed in by students. This
 #' file should be a comma or semicolon separated value file, having the extension
 #' `.csv`, or a Microsoft Excel file, having the extension `.xls(x)`, with on its
@@ -136,7 +136,7 @@ loadKey <- function(keyFile) {
 #' @family load functions
 #'
 #' @examples
-#' ## Load the answer key
+#' ## Load Answer Key File
 #' key <- loadKey(keyFile = paste0(.libPaths()[1], "/wurmc/examples/keyFile.xlsx"))
 #'
 #' ## Load the student responses from a Microsoft Excel file
@@ -165,28 +165,28 @@ loadResponses <- function(respFile, noItems = ncol(key) - 1) {
       stop("Student responses not read, due to an invalid invalid separator (should be either a comma or a semicolon) in the *.csv file.")
     }
     ## Order by responses$File.name
-    responses <- responses[order(responses$File.name), ]
-    ## Generate the student registration number (studentNumber) from columns ID_NO_001:ID_NO_007
+    responses <- responses[order(responses[["File.name"]]), ]
+    ## Generate the student registration number (Studentnumber) from columns ID_NO_001:ID_NO_007
     responses <- tidyr::unite(data = responses,
-                              col = studentNumber,
-                              X.IDStudent..IDNo001:X.IDStudent..IDNo007,
+                              col = "Studentnumber",
+                              "X.IDStudent..IDNo001":"X.IDStudent..IDNo007",
                               sep = "",
                               remove = TRUE)
-    ## Select the columns studentNumber, Version and the student responses to the
-    ## test items (questions)
+    ## Select the columns Studentnumber, Version and the student responses to
+    ## the test items (questions)
     responses <- dplyr::select(responses,
-                               studentNumber,
-                               X.Exam..Version,
+                               "Studentnumber",
+                               "X.Exam..Version",
                                grep("^X\\.Q", colnames(responses)))
-    ## Select the columns "studentNumber", "Version" and item responses equal to
+    ## Select the columns "Studentnumber", "Version" and item responses equal to
     ## noItems in the key.
     responses <- responses[, seq_len(2 + noItems)]
     ## Change all columns of the responses data.frame to character
     for (j in seq_len(ncol(responses))) {
       responses[, j] <- as.character(responses[, j])
     }
-    ## Turn studentNumber column into numeric
-    responses[["studentNumber"]] <- as.numeric(responses[["studentNumber"]])
+    ## Turn Studentnumber column into numeric
+    responses[["Studentnumber"]] <- as.numeric(responses[["Studentnumber"]])
     ## Fill empty fields with "BLANK"
     responses[!is.na(responses) & responses == ""] <- "BLANK"
   } else if (tail(tolower(strsplit(x = respFile, split = "\\.")[[1]]), n = 1) %in% validExt[2:3]) {# a .xls(x) file

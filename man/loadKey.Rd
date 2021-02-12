@@ -20,7 +20,7 @@ columns giving the correct answers to the multiple choice exam test items
 Load a file with the multiple choice exam answer key needed for grading.
 }
 \details{
-The \code{loadKey} function loads a file with the exam answer key for all versions
+The \code{loadKey()} function loads a file with the exam answer key for all versions
 needed to grade the multiple choice answer forms handed in by students. This
 file should be a comma or semicolon separated value file, having the extension
 \code{.csv}, or a Microsoft Excel file, having the extension \code{.xls(x)}, with on its

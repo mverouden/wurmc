@@ -12,8 +12,7 @@ Maintainer: Maikel Verouden <Maikel.Verouden@wur.nl>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 Depends:
-    R (>= 3.3.0),
-    svDialogs (>= 0.9.57)
+    R (>= 3.3.0)
 BugReports: https://github.com/mverouden/wurmc/issues
 URL: https://github.com/mverouden/wurmc
 License: file LICENSE
@@ -23,6 +22,7 @@ RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
 RdMacros: mathjaxr
 Imports:
+    svDialogs (>= 0.9.57),
     tidyr (>= 0.2.0),
     dplyr (>= 0.4.2),
     XLConnect (>= 0.2.11),

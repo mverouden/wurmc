@@ -2,39 +2,60 @@
 % Please edit documentation in R/gradeFunctions.R
 \name{numberCorrect}
 \alias{numberCorrect}
-\title{Determine the Number of Correct Student Responses}
+\title{Determine Number of Correct Student Reponses}
 \usage{
 numberCorrect(responses, key)
 }
 \arguments{
-\item{responses}{A data.frame object, as created with the
-\code{\link{loadResponses}} function, with in the first column the
+\item{responses}{A data.frame object (\strong{REQUIRED}), as created with the
+\code{\link{loadResponses}()} function, with in the first column the
 student registration numbers of students taking the exam. The second column
 specifies the exam version the student filled. Subsequent columns give the
 filled in answers to the multiple choice exam test items (questions) as
 filled by the students, with a maximum of 40 test items (questions).}
 
-\item{key}{A data.frame object, as create with the \code{\link{loadKey}}
-function, with in the first column the exam version and the following
-columns giving the correct answers to the multiple choice exam test items
-(questions).}
+\item{key}{A data.frame object (\strong{REQUIRED}), as created with the
+\code{\link{loadKey}()} function, with in the first column the exam
+version and the subsequent columns giving the correct answers to the
+multiple choice exam test items (questions). The dimensions of the \code{key}
+data.frame object  are used in the grading process.}
 }
 \value{
 The input \code{responses} data.frame object extended with one column
-indicating the number of multiple choice exam test items (questions)
-answered correctly by a student.
+(\verb{No. Correct}) indicating the number of multiple choice exam test items
+(questions) answered correctly by the students.
 }
 \description{
-\code{numberCorrect()} checks the student's responses to the multiple choice
-exam test items (questions) with the appropriate version key and creates a
-column \code{No.correct} indicating the number of test items answered
-correctly by a student. The column \code{No.correct} is added after the last
-column of the data.frame \code{responses}.
+Determine the number of correct student responses to multiple choice exam
+items (questions)
+}
+\details{
+The\code{numberCorrect()} function checks the student's responses to the
+multiple choice exam test items (questions) with the appropriate version
+answer key and creates a column \verb{No. Correct} indicating the number of test
+items (questions) answered correctly by the particular student. The column
+\verb{No. Correct} is added after the last column in the \code{responses} data.frame
+object.
 }
 \examples{
-\dontrun{
-responses <- numberCorrect(responses, key)}
+## Load the answer key
+key <- loadKey(keyFile = paste0(.libPaths()[1], "/wurmc/examples/keyFile.xlsx"))
+
+## Load the student responses from a Microsoft Excel
+responses <- loadResponses(respFile = paste0(.libPaths()[1], "/wurmc/examples/respFile.xlsx"))
+
+## Determine the number of correct student responses
+responses <- numberCorrect(responses, key)
+
 }
 \seealso{
-\code{\link{loadResponses}}, \code{\link{loadKey}}
+\code{\link{loadResponses}()}, \code{\link{loadKey}()}
+
+Other grade functions: 
+\code{\link{gradeExam}()},
+\code{\link{linkNames}()}
 }
+\author{
+Maikel Verouden
+}
+\concept{grade functions}
