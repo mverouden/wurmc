@@ -4,7 +4,7 @@
 \alias{loadResponses}
 \title{Load Student Responses File}
 \usage{
-loadResponses(respFile, noItems = ncol(key) - 1)
+loadResponses(respFile, noItems = ifelse(exists("key"), ncol(key) - 1, 25))
 }
 \arguments{
 \item{respFile}{A character string (\strong{REQUIRED}) specifying the location
@@ -14,10 +14,10 @@ to the multiple choice exam test items (questions).}
 \item{noItems}{An integer (\strong{OPTIONAL}) specifying the number of multiple
 choice exam test items (questions) on the answers sheet to be considered
 and matching the number of test items (questions) in the answer key file.
-If a \code{key} object has been created with the \code{\link{loadKey}()}
+If a \strong{\code{key} object} has been created with the \code{\link{loadKey}()}
 function prior to using the \code{loadResponses()} function the \code{noItems}
 function argument requires no specification and will be filled
-automatically.}
+automatically, otherwise the default value for \code{noItems} will be \strong{25}.}
 }
 \value{
 A data.frame object with in the first column the student registration

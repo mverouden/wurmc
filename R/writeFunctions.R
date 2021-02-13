@@ -56,14 +56,14 @@ formScanner2Excel <- function(fileName,
   ## ID_NO_001:ID_NO_012
   responses <- tidyr::unite(data = responses,
                             col = "Reg Nummer",
-                            X.IDStudent..IDNo001:X.IDStudent..IDNo012, # to join
+                            "X.IDStudent..IDNo001":"X.IDStudent..IDNo012", # to join
                             sep = "",
                             remove = TRUE)
   ## Select the columns reg.number, Version and the student responses to test
   ## items
   responses <- dplyr::select(responses,
                              "Reg Nummer",
-                             X.Exam..Version,
+                             "X.Exam..Version",
                              grep("^X\\.Q", colnames(responses)))
   ## Select columns "reg.number","Version" and item responses equal to noItems
   ## in the key.

@@ -105,10 +105,10 @@ loadKey <- function(keyFile) {
 #' @param noItems An integer (**OPTIONAL**) specifying the number of multiple
 #'    choice exam test items (questions) on the answers sheet to be considered
 #'    and matching the number of test items (questions) in the answer key file.
-#'    If a `key` object has been created with the \code{\link{loadKey}()}
+#'    If a **`key` object** has been created with the \code{\link{loadKey}()}
 #'    function prior to using the `loadResponses()` function the `noItems`
 #'    function argument requires no specification and will be filled
-#'    automatically.
+#'    automatically, otherwise the default value for `noItems` will be **25**.
 #'
 #' @details
 #' The `loadResponses()` function loads a file with the student responses to the
@@ -147,7 +147,7 @@ loadKey <- function(keyFile) {
 #' responses <- loadResponses(respFile = paste0(.libPaths()[1], "/wurmc/examples/respFile.csv"))
 #'
 #' @export
-loadResponses <- function(respFile, noItems = ncol(key) - 1) {
+loadResponses <- function(respFile, noItems = ifelse(exists("key"), ncol(key) - 1, 25)) {#n noItems = ncol(key) - 1
   validExt <- c("csv", "xls", "xlsx")
   ## Check whether a *.csv, *.xls or *.xlsx has been provided
   if (!(tail(x = tolower(strsplit(x = respFile, split = "\\.")[[1]]), n = 1) %in% validExt)) {
