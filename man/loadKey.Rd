@@ -46,10 +46,10 @@ exam required and starts with the version (e.g. "A", "B", "C", "D", \emph{etc.})
 \examples{
 ## Load the answer key from a Microsoft Excel file created with the Microsoft
 ## Excel Template key_template contained in the examples folder of this package
-key <- loadKey(keyFile = paste0(.libPaths()[1], "/wurmc/examples/test_key.xlsx"))
+key <- loadKey(keyFile = paste0(.libPaths()[1], "/wurmc/examples/keyFile.xlsx"))
 
 ## Load the answer key from a comma separated value file
-key <- loadKey(keyFile = paste0(.libPaths()[1], "/wurmc/examples/test_key.csv"))
+key <- loadKey(keyFile = paste0(.libPaths()[1], "/wurmc/examples/keyFile.csv"))
 
 }
 \seealso{

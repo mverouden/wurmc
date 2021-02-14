@@ -49,7 +49,7 @@ responses <- loadResponses(respFile = paste0(.libPaths()[1], "/wurmc/examples/re
 responses <- numberCorrect(responses, key)
 
 ## Link Student Names
-responses <- linkNames(regFile = paste0(.libPaths()[1], "/wurmc/examples/regFile.xlsx"), responses)
+responses <- linkNames(responses, regFile = paste0(.libPaths()[1], "/wurmc/examples/regFile.xlsx"))
 
 ## Grade Multiple Choice Exams
 responses <- gradeExam(responses)

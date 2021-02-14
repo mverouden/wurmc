@@ -4,17 +4,17 @@
 \alias{linkNames}
 \title{Link Student Names}
 \usage{
-linkNames(regFile, responses)
+linkNames(responses, regFile)
 }
 \arguments{
+\item{responses}{A data.frame object (\strong{REQUIRED}), as created with the
+\code{\link{loadResponses}()} function and modified by the
+\code{\link{numberCorrect}()} function.}
+
 \item{regFile}{A character string (\strong{REQUIRED}) specifying the location and
 name of the \verb{*.csv} or \code{.xls(x)} file containing the studentnumber, full
 name and study programme for all students, which registered for the exam
 via Osiris.}
-
-\item{responses}{A data.frame object (\strong{REQUIRED}), as created with the
-\code{\link{loadResponses}()} function and modified by the
-\code{\link{numberCorrect}()} function.}
 }
 \value{
 The input \code{responses} data.frame object extended with three columns
@@ -45,7 +45,7 @@ responses <- loadResponses(respFile = paste0(.libPaths()[1], "/wurmc/examples/re
 responses <- numberCorrect(responses, key)
 
 ## Link Student Names
-responses <- linkNames(regFile = paste0(.libPaths()[1], "/wurmc/examples/regFile.xlsx"), responses)
+responses <- linkNames(responses, regFile = paste0(.libPaths()[1], "/wurmc/examples/regFile.xlsx"))
 
 }
 \seealso{

@@ -70,13 +70,13 @@ numberCorrect <- function(responses, key) {
 #' @description
 #' Link names of students and their study programme to the corrected studentnumbers.
 #'
+#' @param responses A data.frame object (**REQUIRED**), as created with the
+#'    \code{\link{loadResponses}()} function and modified by the
+#'    \code{\link{numberCorrect}()} function.
 #' @param regFile A character string (**REQUIRED**) specifying the location and
 #'    name of the `*.csv` or `.xls(x)` file containing the studentnumber, full
 #'    name and study programme for all students, which registered for the exam
 #'    via Osiris.
-#' @param responses A data.frame object (**REQUIRED**), as created with the
-#'    \code{\link{loadResponses}()} function and modified by the
-#'    \code{\link{numberCorrect}()} function.
 #'
 #' @details
 #' The \code{linkNames()} function compares the student registration numbers
@@ -109,12 +109,12 @@ numberCorrect <- function(responses, key) {
 #' responses <- numberCorrect(responses, key)
 #'
 #' ## Link Student Names
-#' responses <- linkNames(regFile = paste0(.libPaths()[1], "/wurmc/examples/regFile.xlsx"), responses)
+#' responses <- linkNames(responses, regFile = paste0(.libPaths()[1], "/wurmc/examples/regFile.xlsx"))
 #'
 #' @importFrom stats complete.cases
 #'
 #' @export
-linkNames <- function(regFile, responses) {
+linkNames <- function(responses, regFile) {
   ## Check whether numberCorrect was already used
   if (!("No. Correct" %in% colnames(responses))) {
     stop("Function terminated, because the column 'No. Correct' does not exists in the responses object. Please use the numberCorrect() function before applying the linkNames() function.")
@@ -278,7 +278,7 @@ linkNames <- function(regFile, responses) {
 #' responses <- numberCorrect(responses, key)
 #'
 #' ## Link Student Names
-#' responses <- linkNames(regFile = paste0(.libPaths()[1], "/wurmc/examples/regFile.xlsx"), responses)
+#' responses <- linkNames(responses, regFile = paste0(.libPaths()[1], "/wurmc/examples/regFile.xlsx"))
 #'
 #' ## Grade Multiple Choice Exams
 #' responses <- gradeExam(responses)
